@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Admin season controls for Loy Family Lights." />
+  <title>Admin Season Control | Loy Family Lights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-season="christmas" class="admin-page">
+  <div class="glow-fog" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Loy Family Lights home">
+        <span class="brand-badge" data-brand-icon aria-hidden="true">🎄</span>
+        <span class="brand-text">Loy Family Lights<span data-season-label>Christmas Show</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Admin navigation">
+        <a href="index.html">View Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container page-hero">
+      <p class="eyebrow">Admin Only</p>
+      <h1>Season<br />Control</h1>
+      <p class="hero-copy">Use this private admin page to preview a season on this browser. To change the season for every visitor, update the active season config file and redeploy.</p>
+    </section>
+
+    <section class="container">
+      <div class="card admin-card" id="admin-lock">
+        <p class="section-label">Unlock</p>
+        <h2>Enter Admin PIN</h2>
+        <p class="section-text">Default PIN is 9250. Change it inside this page before uploading if you want a different private code.</p>
+        <form class="admin-form" id="admin-pin-form">
+          <label for="admin-pin">Admin PIN</label>
+          <input id="admin-pin" name="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Enter PIN" />
+          <button class="btn btn-primary" type="submit">Unlock Admin Controls</button>
+        </form>
+        <p class="admin-message" id="admin-pin-message" role="status"></p>
+      </div>
+
+      <div class="card admin-card is-hidden" id="admin-controls">
+        <p class="section-label">Current Public Season</p>
+        <h2><span data-season-label>Christmas Show</span></h2>
+        <p class="section-text">Visitors no longer see a season toggle. The public site uses <code>assets/js/season-config.js</code>.</p>
+
+        <div class="admin-season-grid" aria-label="Season preview choices">
+          <button class="admin-season-card" type="button" data-admin-set-season="patriotic"><strong>★ Patriotic</strong><span>Preview patriotic show on this browser</span></button>
+          <button class="admin-season-card" type="button" data-admin-set-season="halloween"><strong>🎃 Halloween</strong><span>Preview Halloween show on this browser</span></button>
+          <button class="admin-season-card" type="button" data-admin-set-season="christmas"><strong>🎄 Christmas</strong><span>Preview Christmas show on this browser</span></button>
+        </div>
+
+        <div class="admin-code-box">
+          <h3>Site-wide season change</h3>
+          <p>For Cloudflare Pages, edit this file before redeploying:</p>
+          <code>assets/js/season-config.js</code>
+          <p>Set it to one of these:</p>
+          <pre><code>window.LOY_ACTIVE_SEASON = "patriotic";
+window.LOY_ACTIVE_SEASON = "halloween";
+window.LOY_ACTIVE_SEASON = "christmas";</code></pre>
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="index.html">View Site Preview</a>
+          <button class="btn btn-secondary" type="button" id="clear-preview">Clear Admin Preview</button>
+        </div>
+        <p class="admin-message" id="admin-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/season-config.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      const ADMIN_PIN = "9250";
+      const lock = document.getElementById("admin-lock");
+      const controls = document.getElementById("admin-controls");
+      const form = document.getElementById("admin-pin-form");
+      const pin = document.getElementById("admin-pin");
+      const message = document.getElementById("admin-pin-message");
+      const status = document.getElementById("admin-status");
+
+      function unlock() {
+        localStorage.setItem("loyAdminUnlocked", "true");
+        lock.classList.add("is-hidden");
+        controls.classList.remove("is-hidden");
+      }
+
+      if (localStorage.getItem("loyAdminUnlocked") === "true") unlock();
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (pin.value === ADMIN_PIN) {
+          unlock();
+        } else {
+          message.textContent = "Incorrect PIN.";
+        }
+      });
+
+      document.querySelectorAll("[data-admin-set-season]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const season = button.getAttribute("data-admin-set-season");
+          localStorage.setItem("loyAdminPreviewSeason", season);
+          document.body.dataset.season = season;
+          window.location.reload();
+        });
+      });
+
+      document.getElementById("clear-preview").addEventListener("click", function () {
+        localStorage.removeItem("loyAdminPreviewSeason");
+        status.textContent = "Admin preview cleared. The site will use assets/js/season-config.js again.";
+      });
+    })();
+  </script>
+</body>
+</html>
