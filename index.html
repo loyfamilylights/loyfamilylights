@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Loy Family Lights Patriotic Light Show. Tune to 92.5 FM, watch the red, white, and blue display, and enjoy a family-friendly neighborhood celebration."
+  />
+  <title>Loy Family Lights | Patriotic Light Show</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="glow-fog" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Loy Family Lights home">
+        <span class="brand-badge" aria-hidden="true">★</span>
+        <span class="brand-text">
+          Loy Family Lights
+          <span>Patriotic Show</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="watch.html">Watch</a>
+        <a href="visit.html">Visit Tips</a>
+        <a class="nav-cta" href="https://show.loyfamilylights.com/" target="_blank" rel="noopener">Request Songs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-copy-wrap">
+        <p class="eyebrow">Red, White & Blue Celebration</p>
+        <h1>Loy Family<br />Lights</h1>
+        <p class="hero-copy">
+          A family-friendly patriotic light show filled with waving stars,
+          bold colors, inspiring music, fireworks energy, and hometown pride.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="schedule.html">⏱ View Countdown</a>
+          <a class="btn btn-secondary" href="watch.html">▶ Watch Live</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Patriotic waving flag preview">
+        <div class="flag-stage">
+          <div class="flag-pole" aria-hidden="true"></div>
+
+          <svg class="waving-flag" viewBox="0 0 760 430" role="img" aria-labelledby="flagTitle flagDesc">
+            <title id="flagTitle">Animated American-style patriotic flag</title>
+            <desc id="flagDesc">A red, white, and blue flag waving with stars and stripes.</desc>
+
+            <defs>
+              <filter id="flagWave">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.012 0.045"
+                  numOctaves="2"
+                  seed="8"
+                  result="noise"
+                >
+                  <animate
+                    attributeName="baseFrequency"
+                    dur="6s"
+                    values="0.010 0.035;0.018 0.055;0.010 0.035"
+                    repeatCount="indefinite"
+                  />
+                </feTurbulence>
+
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  in2="noise"
+                  scale="28"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                >
+                  <animate
+                    attributeName="scale"
+                    dur="4.5s"
+                    values="18;34;22;30;18"
+                    repeatCount="indefinite"
+                  />
+                </feDisplacementMap>
+              </filter>
+
+              <linearGradient id="flagShade" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                <stop offset="18%" stop-color="rgba(0,0,0,0.18)" />
+                <stop offset="38%" stop-color="rgba(255,255,255,0.18)" />
+                <stop offset="60%" stop-color="rgba(0,0,0,0.2)" />
+                <stop offset="82%" stop-color="rgba(255,255,255,0.16)" />
+                <stop offset="100%" stop-color="rgba(0,0,0,0.12)" />
+              </linearGradient>
+
+              <clipPath id="flagClip">
+                <path d="M58 42 C170 16 258 68 366 42 C498 10 602 50 716 28 L716 380 C606 410 498 354 372 386 C256 414 168 360 58 388 Z" />
+              </clipPath>
+            </defs>
+
+            <g filter="url(#flagWave)" clip-path="url(#flagClip)">
+              <rect x="40" y="20" width="700" height="390" fill="#f9fbff" />
+
+              <g>
+                <rect x="40" y="20" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="80" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="140" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="200" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="260" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="320" width="700" height="30" fill="#c62828" />
+                <rect x="40" y="380" width="700" height="30" fill="#c62828" />
+              </g>
+
+              <rect x="40" y="20" width="305" height="210" fill="#0a1f44" />
+
+              <g class="flag-stars-svg" fill="#f9fbff">
+                <text x="70" y="58">★</text><text x="120" y="58">★</text><text x="170" y="58">★</text><text x="220" y="58">★</text><text x="270" y="58">★</text>
+                <text x="95" y="92">★</text><text x="145" y="92">★</text><text x="195" y="92">★</text><text x="245" y="92">★</text><text x="295" y="92">★</text>
+                <text x="70" y="126">★</text><text x="120" y="126">★</text><text x="170" y="126">★</text><text x="220" y="126">★</text><text x="270" y="126">★</text>
+                <text x="95" y="160">★</text><text x="145" y="160">★</text><text x="195" y="160">★</text><text x="245" y="160">★</text><text x="295" y="160">★</text>
+                <text x="70" y="194">★</text><text x="120" y="194">★</text><text x="170" y="194">★</text><text x="220" y="194">★</text><text x="270" y="194">★</text>
+              </g>
+
+              <rect x="40" y="20" width="700" height="390" fill="url(#flagShade)" opacity="0.72" />
+            </g>
+
+            <path
+              class="flag-edge"
+              d="M58 42 C170 16 258 68 366 42 C498 10 602 50 716 28 L716 380 C606 410 498 354 372 386 C256 414 168 360 58 388 Z"
+              fill="none"
+              stroke="rgba(255,255,255,0.45)"
+              stroke-width="4"
+            />
+          </svg>
+
+          <div class="firework one" aria-hidden="true">✦</div>
+          <div class="firework two" aria-hidden="true">✦</div>
+          <div class="firework three" aria-hidden="true">✦</div>
+        </div>
+
+        <div class="quick-info">
+          <div class="info-pill">
+            <strong>Listen</strong>
+            <span>92.5 FM</span>
+          </div>
+          <div class="info-pill">
+            <strong>Next Show</strong>
+            <span data-countdown-label>Loading</span>
+          </div>
+          <div class="info-pill">
+            <strong>Vibe</strong>
+            <span>Family Fun</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container countdown-section">
+      <div class="card countdown-card">
+        <div>
+          <p class="section-label">Next Show Countdown</p>
+          <h2 data-show-status>Calculating next show...</h2>
+          <p class="section-text" data-show-message>
+            Checking the patriotic show schedule.
+          </p>
+        </div>
+
+        <div class="countdown-grid" aria-label="Countdown to the next show">
+          <div class="count-box">
+            <strong data-countdown-days>00</strong>
+            <span>Days</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-hours>00</strong>
+            <span>Hours</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-minutes>00</strong>
+            <span>Minutes</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-seconds>00</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stripe" aria-hidden="true"></div>
+
+    <section class="container">
+      <div class="section-head">
+        <p class="section-label">Main Attractions</p>
+        <h2>Everything You Need for the Show</h2>
+        <p class="section-text">
+          Tune in, request songs, watch from anywhere, and help keep the neighborhood celebration safe.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📻</div>
+          <h3>Listen Live</h3>
+          <p>
+            Tune your vehicle radio to the show audio and enjoy music synchronized with the lights.
+          </p>
+          <div class="large-stat">92.5 FM</div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎵</div>
+          <h3>Request Songs</h3>
+          <p>
+            Vote or request favorite patriotic songs using the ShowPilot request page.
+          </p>
+          <div class="card-action">
+            <a class="btn btn-primary" href="https://show.loyfamilylights.com/" target="_blank" rel="noopener">
+              Open ShowPilot
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">▶</div>
+          <h3>Watch Online</h3>
+          <p>
+            Can’t make it in person? Open the YouTube live feed and enjoy the show from anywhere.
+          </p>
+          <div class="card-action">
+            <a class="btn btn-secondary" href="watch.html">Watch Page</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container feature-banner">
+      <div>
+        <p class="section-label">Patriotic Night</p>
+        <h2>Stars, Stripes, Music, and Light</h2>
+        <p class="section-text">
+          Bring the family, park safely, dim your headlights, tune in, and enjoy a red, white, and blue neighborhood tradition.
+        </p>
+      </div>
+
+      <a class="btn btn-primary" href="visit.html">Plan Your Visit</a>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div class="footer-brand">★ Loy Family Lights ★</div>
+    <p>Red, white, blue, and bright — a patriotic neighborhood light show for all ages.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Loy Family Lights show schedule, nightly hours, FM station, and countdown to the next patriotic light show."
+  />
+  <title>Schedule | Loy Family Lights</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="glow-fog" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Loy Family Lights home">
+        <span class="brand-badge" aria-hidden="true">★</span>
+        <span class="brand-text">
+          Loy Family Lights
+          <span>Patriotic Show</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="schedule.html">Schedule</a>
+        <a href="watch.html">Watch</a>
+        <a href="visit.html">Visit Tips</a>
+        <a class="nav-cta" href="https://show.loyfamilylights.com/" target="_blank" rel="noopener">Request Songs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container page-hero">
+      <p class="eyebrow">Show Schedule</p>
+      <h1>Countdown to<br />Patriotic Lights</h1>
+      <p class="hero-copy">
+        Check when the next show starts, then tune your radio to 92.5 FM and enjoy the lights.
+      </p>
+    </section>
+
+    <section class="container">
+      <div class="card countdown-card xl">
+        <div>
+          <p class="section-label">Next Show</p>
+          <h2 data-show-status>Calculating next show...</h2>
+          <p class="section-text" data-show-message>
+            Checking the patriotic show schedule.
+          </p>
+        </div>
+
+        <div class="countdown-grid" aria-label="Countdown to the next show">
+          <div class="count-box">
+            <strong data-countdown-days>00</strong>
+            <span>Days</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-hours>00</strong>
+            <span>Hours</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-minutes>00</strong>
+            <span>Minutes</span>
+          </div>
+          <div class="count-box">
+            <strong data-countdown-seconds>00</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="section-head">
+        <p class="section-label">Hours</p>
+        <h2>Proudly Shining Every Evening</h2>
+        <p class="section-text">
+          The patriotic display runs each evening so families, neighbors, and guests can enjoy the show together.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🌅</div>
+          <h3>Sunday – Thursday</h3>
+          <p>The show runs from sunset until 10:00 PM.</p>
+          <div class="large-stat">Sunset – 10 PM</div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎆</div>
+          <h3>Friday – Saturday</h3>
+          <p>The show runs later on weekend nights.</p>
+          <div class="large-stat">Sunset – 11 PM</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="card split-card">
+        <div>
+          <p class="section-label">Tune In</p>
+          <h2>Listen While You Watch</h2>
+          <p class="section-text">
+            Park safely, dim your headlights, and tune your radio to the synchronized show soundtrack.
+          </p>
+        </div>
+
+        <div class="radio-badge">
+          <span>FM</span>
+          <strong>92.5</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div class="footer-brand">★ Loy Family Lights ★</div>
+    <p>Red, white, blue, and bright — a patriotic neighborhood light show for all ages.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
