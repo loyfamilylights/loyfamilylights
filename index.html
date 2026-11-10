@@ -9,10 +9,59 @@
   <meta property="og:description" content="Where music meets the magic of lights." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+/* Bundled CSS: works even when GitHub uploads omit the assets folder. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+:root{--bg:#081525;--bg2:#0b1c30;--panel:#12283c;--panel2:#132d44;--border:#2a4055;--text:#f5f4ec;--muted:#b1c3cf;--gold:#f8c975;--red:#e95761;--mint:#7bd6b7;--blue:#b0d9f5;--radius:17px;scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden}body[data-season="halloween"]{--bg:#170f21;--bg2:#221426;--panel:#311f32;--panel2:#3b2939;--border:#63425b;--gold:#ffad61;--red:#ea795b;--mint:#b4cf7b;--blue:#dfb9e7}a{color:inherit;text-decoration:none}button,select{font:inherit}button{cursor:pointer}.skip{position:absolute;left:8px;top:-55px;background:white;color:#000;padding:10px;z-index:50}.skip:focus{top:8px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.topbar{background:#ab3246;text-align:center;color:#fff5e9;letter-spacing:.19em;font-size:10px;font-weight:800;padding:10px}.sparkle{color:#ffdb90;margin:0 20px}.header{height:80px;max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 42px;position:relative;z-index:10}.brand{display:flex;gap:13px;align-items:center;font-size:16px;font-weight:800;line-height:1.1;letter-spacing:.1em}.brand b{color:var(--gold)}.brand small{display:block;font-size:8px;letter-spacing:.26em;color:var(--muted);margin-top:6px}.brand-icon{font-size:44px;color:var(--gold);text-shadow:0 0 20px #eabc6380}.nav{display:flex;align-items:center;gap:31px}.nav a{font-size:12px;font-weight:800;color:#e0e8ed;transition:color .2s}.nav a:hover,.nav a:focus-visible{color:var(--gold)}.theme-toggle{border:1px solid #81605d;border-radius:7px;padding:10px 13px;background:#382631;color:#fff1e2;font-size:11px;font-weight:800}.menu-toggle{display:none}.hero{position:relative;min-height:610px;text-align:center;isolation:isolate;background:radial-gradient(ellipse at 50% 30%,#173653 0%,transparent 55%),linear-gradient(180deg,var(--bg) 10%,#132b42 100%);overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 6% 26%,#fff 1px,transparent 2px),radial-gradient(circle at 22% 46%,#ffce90 1px,transparent 2px),radial-gradient(circle at 85% 18%,#fff 1px,transparent 2px),radial-gradient(circle at 70% 41%,#fff 1px,transparent 2px);background-size:230px 180px;opacity:.5;z-index:-1}.garland{position:absolute;top:0;left:0;right:0;height:42px;display:flex;justify-content:space-around;align-items:flex-start;border-top:3px solid #243e42;border-radius:50%}.garland span{display:inline-block;color:#fb776a;font-size:22px;text-shadow:0 0 13px #fb776a,0 0 20px #fb776a;animation:glow 2.5s infinite alternate}.garland span:nth-child(3n){color:#ffe88c;text-shadow:0 0 13px #ffe88c}.garland span:nth-child(3n+1){color:#84d8b6;text-shadow:0 0 13px #84d8b6}.garland span:nth-child(even){animation-delay:1s}.snowfield{position:absolute;inset:80px 0 auto;color:#9fcae3;font-size:42px;letter-spacing:8vw;opacity:.3;pointer-events:none}.hero-inner{position:relative;z-index:2;padding:86px 16px 215px}.eyebrow,.kicker{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.31em}.line{display:inline-block;vertical-align:middle;width:35px;height:1px;background:var(--gold);margin:0 12px;opacity:.7}h1,h2,h3,p{margin-top:0}h1,h2,.cta h2{font-family:'Playfair Display',Georgia,serif}h1{font-size:clamp(49px,6.2vw,88px);line-height:1.14;letter-spacing:-.035em;margin:24px auto 20px;font-weight:600}h1 em,h2 em,.cta h2 em{color:var(--gold);font-weight:500}h1>span{color:#fff9eb}.hero-inner>p{max-width:630px;margin:0 auto;color:#c6d3df;line-height:1.85;font-size:14px}.hero-buttons{display:flex;justify-content:center;gap:14px;margin:29px 0 38px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:7px;font-size:12px;font-weight:800;letter-spacing:.03em;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--red);color:white;box-shadow:0 8px 28px #d73d472b}.btn-outline{border:1px solid #60788a;color:#eff6f7;background:#112235ad}.hero-facts{display:flex;justify-content:center;gap:52px}.hero-facts>div{display:flex;gap:10px;align-items:center;text-align:left}.hero-facts strong{color:var(--gold);font-size:25px}.hero-facts span{font-size:10px;font-weight:800;letter-spacing:.08em;line-height:1.65;color:#d6e6ed}.house-wrap{position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);width:min(810px,95%);opacity:.95}.house{display:block;width:100%;height:auto;filter:drop-shadow(0 0 22px #ffca6333)}.roof-lights circle:nth-child(4n){fill:#ff6576}.roof-lights circle:nth-child(4n+1){fill:#fce08c}.roof-lights circle:nth-child(4n+2){fill:#68e4ba}.roof-lights circle:nth-child(4n+3){fill:#8dc9ff}.roof-lights circle{filter:drop-shadow(0 0 4px currentColor);animation:glow 1.6s infinite alternate}.roof-lights circle:nth-child(3n){animation-delay:.6s}@keyframes glow{from{opacity:.55}to{opacity:1}}.announcement{background:#aa3446;text-align:center;padding:18px 18px;color:#fff4ea;display:flex;align-items:center;justify-content:center;gap:24px;font-size:12px;font-weight:700}.announcement p{margin:0;max-width:850px}.announcement-star{color:#ffdda0;font-size:22px}.section{padding:90px 28px;scroll-margin-top:20px}.show-section,.kids-section{background:var(--bg2)}.music-section,.visit-section{background:var(--bg)}.section-heading{text-align:center;margin:0 auto 45px;max-width:650px}.section-heading h2{font-size:clamp(35px,4.5vw,53px);font-weight:600;letter-spacing:-.02em;margin:14px 0}.section-heading>p{color:var(--muted);font-size:13px;line-height:1.8}.stat-grid,.visit-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.glass-card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 10px 35px #00000013}.stat-grid .glass-card{min-height:242px;padding:27px}.card-heading{font-size:10px;letter-spacing:.15em;font-weight:800;color:#e8f1f5;display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.icon-round{border:1px solid #445b72;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;color:var(--gold);font-size:16px}.status-pill{display:inline-block;background:#2b503e;color:#b6ebbf;border:1px solid #44785b;border-radius:100px;padding:6px 12px;font-weight:800;font-size:11px}.status-pill[data-status="cancelled"]{background:#5e333d;border-color:#bb6068;color:#ffd5d9}.status-pill[data-status="live"]{background:#25634b;border-color:#5fdca8;color:#e7ffed}.stat-grid h3{margin:16px 0 8px;font-size:18px}.stat-grid p,.stat-grid small,.visit-card p{color:var(--muted);font-size:12px;line-height:1.75}.stat-grid small{font-size:10px}.big-stat{font-family:'Playfair Display',Georgia,serif;font-size:clamp(25px,3vw,38px);font-weight:700;color:var(--gold);white-space:normal}.count-number{font-family:'Playfair Display',Georgia,serif;font-size:62px;line-height:1;color:var(--gold)}.count-caption{font-size:10px;font-weight:800;letter-spacing:.14em;color:#e1eadc;margin:10px 0 20px}.schedule-banner{max-width:1100px;margin:23px auto 0;padding:27px 37px;border-radius:var(--radius);background:#243b4d;border:1px solid #395568;display:flex;align-items:center;gap:25px}.schedule-illustration{width:68px;height:68px;border:2px solid #d9b972;border-radius:50%;display:grid;place-items:center;font-size:37px;color:var(--gold);flex-shrink:0}.schedule-banner h3{font-family:'Playfair Display',Georgia,serif;font-size:26px;margin:9px 0 4px}.schedule-banner p{color:#c1d3da;font-size:12px;margin:0}.schedule-times{margin-left:auto;display:flex;gap:25px}.schedule-times>div{min-width:120px}.schedule-times b{display:block;font-size:11px;color:var(--gold);margin-bottom:7px}.schedule-times span{font-size:12px;font-weight:700}.music-layout{max-width:1100px;display:grid;grid-template-columns:.88fr 1.12fr;gap:21px;margin:auto}.now-card{padding:35px 27px;text-align:center}.vinyl{width:159px;height:159px;border-radius:50%;background:repeating-radial-gradient(circle,#10141e 0px,#10141e 3px,#29323d 4px,#151922 6px);border:7px solid #1a2836;margin:2px auto 27px;display:grid;place-items:center;box-shadow:0 0 30px #f6ba6322}.vinyl-inner{width:70px;height:70px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:36px;border:7px solid #efbd8c;color:#fff}.now-card h3{font-family:'Playfair Display',Georgia,serif;font-size:27px;margin:12px 0 5px}.now-card>p{color:var(--muted);font-size:12px}.demo-tag{display:inline-block;border-radius:5px;background:#263f53;color:#c0d2da;font-size:10px;padding:7px 10px;margin:10px auto 18px}.now-card .up-next{min-height:15px}.btn-wide{width:min(100%,300px)}.playlist-card{padding:28px}.playlist-list{display:flex;flex-direction:column}.song-row{display:flex;align-items:center;gap:16px;padding:14px 1px;border-bottom:1px solid var(--border)}.song-row:last-child{border-bottom:none}.song-icon{width:48px;height:48px;background:#30475c;border-radius:8px;display:grid;place-items:center;font-size:24px;flex-shrink:0}.song-row h4{font-size:13px;margin:0 0 5px}.song-row p{font-size:11px;color:var(--muted);margin:0}.song-mood{margin-left:auto;font-size:10px;color:#e5c895;border:1px solid #53616b;border-radius:100px;padding:6px 9px;white-space:nowrap}.playlist-note{color:var(--muted);font-size:10px;line-height:1.6;padding-top:16px}.kids-grid{max-width:1100px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;margin:auto}.lab{padding:26px}.lab-top{display:flex;justify-content:space-between;gap:14px}.lab-label{color:var(--gold);font-size:10px;letter-spacing:.18em;font-weight:800}.lab h3{font-family:'Playfair Display',Georgia,serif;font-size:25px;margin:12px 0}.lab p{color:var(--muted);font-size:12px;line-height:1.8}.lab-emoji{font-size:39px}.mini-scene{background:radial-gradient(ellipse at 50% 100%,#365676 0%,#10243b 65%);border-radius:12px;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;overflow:hidden;position:relative;padding-top:12px}.mini-roof{font-size:85px;color:#a7bcd2;line-height:.85;transform:scaleX(3.8) translateY(7px);text-shadow:0 2px 5px #000}.mini-bulbs{display:flex;gap:9px;align-items:center;justify-content:center;z-index:2;transform:translateY(-5px)}.bulb{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--light,#ff5c72);box-shadow:0 0 10px 4px var(--light,#ff5c72)}.mini-bulbs[data-pattern="twinkle"] .bulb{animation:twinkle 1s infinite alternate}.mini-bulbs[data-pattern="chase"] .bulb{animation:twinkle .6s infinite alternate}.mini-bulbs[data-pattern="chase"] .bulb:nth-child(4n){animation-delay:.1s}.mini-bulbs[data-pattern="chase"] .bulb:nth-child(4n+1){animation-delay:.25s}.mini-bulbs[data-pattern="chase"] .bulb:nth-child(4n+2){animation-delay:.4s}.mini-bulbs[data-pattern="chase"] .bulb:nth-child(4n+3){animation-delay:.55s}.mini-bulbs[data-pattern="twinkle"] .bulb:nth-child(even){animation-delay:.55s}@keyframes twinkle{from{opacity:.2;box-shadow:0 0 2px var(--light)}to{opacity:1;box-shadow:0 0 13px 5px var(--light)}}.mini-house{width:240px;height:83px;border:3px solid #6b819d;border-bottom:0;background:#243950;display:flex;justify-content:space-around;align-items:end}.mini-window{width:42px;height:46px;background:#ffe5a0;border:4px solid #b09c6e;margin-bottom:15px}.mini-door{height:68px;width:43px;background:#8d4048;border:3px solid #bf7172}.lab-controls{margin-top:23px}.lab-controls>span{font-size:11px;font-weight:800}.swatches{display:flex;gap:10px;margin:12px 0}.swatch{background:var(--swatch);border:2px solid transparent;width:30px;height:30px;border-radius:50%}.swatch.active{outline:2px solid #fff;outline-offset:3px}.rainbow-swatch{background:conic-gradient(#ff5c72,#ffd66a,#4edcb4,#83caff,#ff5c72)}.pattern-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.small-btn{border:1px solid #55708b;color:#e8f4fa;background:#243e55;border-radius:6px;padding:9px 12px;font-size:11px;font-weight:800}.small-btn.selected{background:#b34c55;border-color:#df8085}.kid-side{display:flex;flex-direction:column;gap:17px}.kid-tile{display:flex;align-items:flex-start;gap:17px;padding:22px}.tile-icon{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:#31445c;font-size:28px;flex-shrink:0}.kid-tile h3{font-size:17px;margin-bottom:8px}.kid-tile p{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:9px}.kid-tile strong{color:var(--gold);font-size:12px}.kid-tile select{display:block;max-width:100%;width:100%;padding:9px;border-radius:5px;border:1px solid #62788c;background:#182c41;color:white;margin:8px 0}.kid-tile small{display:block;margin-top:6px;color:var(--mint)}.visit-card{padding:28px;min-height:220px}.visit-icon{font-size:30px;color:var(--gold);margin-bottom:16px}.visit-card h3{font-size:18px;margin-bottom:8px}.text-link{color:var(--gold);font-size:12px;font-weight:800}.social-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}.social-links a{border:1px solid var(--border);padding:6px 10px;border-radius:5px;font-size:11px;color:var(--gold)}.cta{text-align:center;padding:80px 20px;background:radial-gradient(ellipse at center,#284562 0%,var(--bg2) 65%)}.cta>span{color:var(--gold);letter-spacing:18px}.cta h2{font-size:clamp(32px,4.5vw,51px);margin:20px 0 10px}.cta p{color:var(--muted);font-size:13px;margin-bottom:27px}footer{text-align:center;padding:45px 20px;background:#06111d;border-top:1px solid #284056}footer .footer-brand{font-weight:800;letter-spacing:.13em;color:var(--gold);margin-bottom:12px}footer p{color:#a8bcca;font-size:12px}footer .footer-small{font-size:10px}body[data-season="halloween"] .topbar,body[data-season="halloween"] .announcement{background:#873c35}body[data-season="halloween"] .mini-scene{background:radial-gradient(ellipse at 50% 100%,#60436d 0%,#21142c 70%)}body[data-season="halloween"] .schedule-banner{background:#382a40}@media(max-width:850px){.header{padding:0 22px}.nav{gap:15px}.nav a{font-size:11px}.stat-grid{gap:11px}.stat-grid .glass-card{padding:18px}.big-stat{font-size:26px}.schedule-times{gap:10px}.schedule-banner{padding:22px}.music-layout,.kids-grid{grid-template-columns:1fr}}@media(max-width:660px){.topbar{font-size:8px;letter-spacing:.12em}.sparkle{margin:0 5px}.header{height:70px}.brand{font-size:13px}.brand-icon{font-size:36px}.menu-toggle{display:block;background:transparent;color:white;border:1px solid var(--border);border-radius:7px;padding:9px}.nav{display:none;position:absolute;top:68px;left:12px;right:12px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;flex-direction:column;align-items:stretch;box-shadow:0 12px 28px #0008}.nav.open{display:flex}.nav a{font-size:13px;padding:9px}.hero{min-height:570px}.hero-inner{padding-top:85px;padding-bottom:150px}.hero-inner>p{font-size:12px}.hero-buttons{flex-direction:column;max-width:260px;margin:24px auto}.hero-facts{gap:12px}.hero-facts strong{font-size:18px}.hero-facts span{font-size:8px}.house-wrap{width:110%;}.section{padding:65px 16px}.stat-grid,.visit-grid{grid-template-columns:1fr}.stat-grid .glass-card{min-height:0;padding:24px}.schedule-banner{flex-wrap:wrap;gap:12px}.schedule-illustration{width:50px;height:50px;font-size:28px}.schedule-times{width:100%;margin:10px 0 0;justify-content:space-between}.schedule-times>div{min-width:0}.song-mood{display:none}.kid-tile{padding:17px}.announcement-star{display:none}.snowfield{font-size:25px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+</style>
   <title>Loy Family Lights | Magical Holiday Light Show</title>
-  <script src="config.js" defer></script>
-  <script src="assets/app.js" defer></script>
+  <script>
+/* Built-in defaults. Edit config.js to override these. */
+/** Edit this file to personalize your GitHub Pages website. */
+window.LOY_CONFIG = {
+  showName: 'Loy Family Lights',
+  tagline: 'Where music meets the magic of lights',
+  station: 'Tune in on-site', // Example: '88.1 FM' (set only your actual licensed/use frequency)
+  locationLabel: 'Ligonier, Indiana',
+  address: '', // Optional public viewing address; used to enable Directions
+  timezone: 'America/Indiana/Indianapolis',
+  season: 'christmas', // 'christmas' or 'halloween'
+  status: 'scheduled', // 'scheduled', 'live', 'paused', 'cancelled', 'offseason'
+  announcement: 'Welcome to Loy Family Lights! Enjoy the music, stay in your vehicle, and please be respectful of our neighbors.',
+  schedule: [
+    { days: 'Sun–Thu', time: '6:00–9:00 PM' },
+    { days: 'Fri–Sat', time: '6:00–10:00 PM' }
+  ], // EXAMPLE HOURS: replace with your actual schedule before publishing
+  seasonStart: '2026-11-27',
+  seasonEnd: '2026-12-31',
+  remoteFalconUrl: '', // Your publicly available Remote Falcon visitor page URL
+  livestreamUrl: '', // YouTube live stream or another public video URL
+  donationUrl: '',
+  facebookUrl: '',
+  youtubeUrl: '',
+  instagramUrl: '',
+  contactEmail: '',
+  playlist: [
+    { title: 'The Bells of Christmas Thunder', artist: 'Loy Family Lights Original', mood: 'Symphonic Rock', icon: '🔔' },
+    { title: 'The Greatest Night of the Year', artist: 'Loy Family Lights Original', mood: 'Holiday Anthem', icon: '✨' },
+    { title: 'Do We Really Need More Lights?', artist: 'Loy Family Lights Original', mood: 'Christmas Rock', icon: '🎸' },
+    { title: 'Christmas Magic', artist: 'Holiday Mix', mood: 'Festive', icon: '🎄' }
+  ],
+  halloweenPlaylist: [
+    { title: 'Night of the Jack-O’-Lanterns', artist: 'Loy Family Lights Original', mood: 'Haunted Carnival', icon: '🎃' },
+    { title: 'March of the Pumpkin King', artist: 'Loy Family Lights Original', mood: 'Halloween Anthem', icon: '👑' }
+  ],
+  // Optional: provide your own same-origin/public JSON snapshot, e.g. 'data/show-status.json'.
+  // Expected shape: { "status":"live", "nowPlaying":"Song title", "upNext":"Song title", "updatedAt":"2026-12-01T18:00:00-05:00" }
+  statusJsonUrl: '',
+  statusRefreshSeconds: 60
+};
+
+</script>
+<script src="config.js"></script>
+  
 </head>
 <body data-season="christmas">
   <a class="skip" href="#main">Skip to content</a>
@@ -57,5 +106,177 @@
     <section class="cta"><span>✦ ✧ ✦</span><h2>Make memories that <em>shine.</em></h2><p>From our family to yours, thank you for being part of the magic.</p><a class="btn btn-primary" href="#home">Back to the Magic ↑</a></section>
   </main>
   <footer><div class="footer-brand">✳ <strong>LOY FAMILY LIGHTS</strong></div><p>Made with ♡, music, and a whole lot of Christmas lights.</p><p class="footer-small">© <span id="year"></span> Loy Family Lights · An independently created holiday show website.</p><p class="footer-small">Inspired by holiday show community features. Not affiliated with the Marquee WordPress plugin.</p></footer>
+<script>
+/* Bundled functionality: no app.js dependency. */
+(() => {
+  'use strict';
+  const c = window.LOY_CONFIG || {};
+  const $ = id => document.getElementById(id);
+  const setText = (id, str) => { const el = $(id); if (el) el.textContent = String(str ?? ''); };
+  const playlistFor = season => season === 'halloween' ? (c.halloweenPlaylist || []) : (c.playlist || []);
+  const validHttp = value => { try { const u = new URL(value); return ['https:', 'http:'].includes(u.protocol) ? u.href : ''; } catch { return ''; } };
+  const parseDate = date => /^\d{4}-\d{2}-\d{2}$/.test(date || '') ? date : '';
+  const todayInShowTZ = () => {
+    try { return new Intl.DateTimeFormat('en-CA', { timeZone: c.timezone || 'America/Indiana/Indianapolis', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()); }
+    catch { return new Date().toISOString().slice(0, 10); }
+  };
+  const formatDate = date => { const d = parseDate(date); if (!d) return ''; return new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }); };
+  const daysUntil = (mm, dd) => {
+    const date = todayInShowTZ(); const year = Number(date.slice(0,4));
+    const today = Date.UTC(year, Number(date.slice(5,7))-1, Number(date.slice(8,10)));
+    let target = Date.UTC(year, mm-1, dd);
+    if (target < today) target = Date.UTC(year+1, mm-1, dd);
+    return Math.round((target-today)/86400000);
+  };
+  let currentSeason = ['christmas', 'halloween'].includes(c.season) ? c.season : 'christmas';
+  let liveSnapshot = null;
+  let lightColor = 'pink'; let lightPattern = 'twinkle';
+  const statusNames = {
+    live: ['● Live Now', 'The lights are shining!', 'Enjoy the show! Follow our posted viewing guidelines.'],
+    scheduled: ['● Scheduled', 'Holiday magic is on the way!', 'Please check show dates and times before visiting.'],
+    paused: ['● Paused', 'The show is temporarily paused.', 'Check back for updates before you visit.'],
+    cancelled: ['● Cancelled', 'Tonight’s show is cancelled.', 'Thanks for understanding. Please check again another night.'],
+    offseason: ['● Off Season', 'See you next season!', 'We are working on more magic for the next holiday.']
+  };
+  function drawStatus() {
+    const status = liveSnapshot?.status || c.status || 'scheduled';
+    const details = statusNames[status] || statusNames.scheduled;
+    const pill = $('statusPill'); pill.textContent = details[0]; pill.dataset.status = status;
+    setText('statusHeading', details[1]); setText('statusDescription', details[2]);
+    setText('lastUpdated', liveSnapshot?.updatedAt ? `Status feed updated: ${new Date(liveSnapshot.updatedAt).toLocaleString()}` : 'Status is manually configured; not a live FPP connection.');
+    const current = liveSnapshot?.nowPlaying;
+    if (current && status === 'live') {
+      setText('featuredTitle', current);
+      setText('featuredArtist', 'Live show feed');
+      setText('nowNotice', 'Now playing · From configured status feed');
+      setText('upNext', liveSnapshot?.upNext ? `Up next: ${liveSnapshot.upNext}` : '');
+    } else {
+      const songs = playlistFor(currentSeason);
+      setText('featuredTitle', songs[0]?.title || 'Songs coming soon');
+      setText('featuredArtist', songs[0]?.artist || 'Loy Family Lights');
+      setText('nowNotice', 'Featured playlist preview — not live playback');
+      setText('upNext', '');
+    }
+  }
+  function drawPlaylist() {
+    const list = $('playlistList'); list.replaceChildren();
+    const songs = playlistFor(currentSeason);
+    songs.forEach(song => {
+      const row = document.createElement('div'); row.className = 'song-row';
+      const icon = document.createElement('span'); icon.className = 'song-icon'; icon.textContent = song.icon || '♫';
+      const content = document.createElement('div');
+      const title = document.createElement('h4'); title.textContent = song.title || 'Untitled';
+      const artist = document.createElement('p'); artist.textContent = song.artist || 'Loy Family Lights';
+      content.append(title, artist);
+      const mood = document.createElement('span'); mood.className = 'song-mood'; mood.textContent = song.mood || 'Show Music';
+      row.append(icon, content, mood); list.appendChild(row);
+    });
+    const select = $('favoriteSelect'); select.replaceChildren();
+    for (const song of songs) { const opt = document.createElement('option'); opt.value = song.title; opt.textContent = song.title; select.appendChild(opt); }
+    const saved = localStorage.getItem('loy-favorite-' + currentSeason);
+    if (saved && songs.some(song => song.title === saved)) select.value = saved;
+    setText('favoriteMessage', saved ? 'Saved on this device: ' + saved : '');
+    drawStatus();
+  }
+  function drawCountdown() {
+    const halloween = currentSeason === 'halloween';
+    const days = halloween ? daysUntil(10, 31) : daysUntil(12, 25);
+    setText('countDays', days); setText('kidCountdown', days === 0 ? 'It’s the big day!' : `${days} days to go!`);
+    setText('countLabel', halloween ? 'DAYS TO HALLOWEEN' : 'DAYS TO CHRISTMAS');
+  }
+  function drawSeason() {
+    document.body.dataset.season = currentSeason;
+    const button = $('themeToggle');
+    button.textContent = currentSeason === 'christmas' ? '🎃 Halloween' : '🎄 Christmas';
+    button.setAttribute('aria-label', `Switch to ${currentSeason === 'christmas' ? 'Halloween' : 'Christmas'} theme`);
+    setText('heroTagline', currentSeason === 'halloween'
+      ? 'Join us for a spooktacular celebration of synchronized lights, music, and family-friendly Halloween fun.'
+      : 'Experience a spectacular celebration of synchronized lights, music, and holiday wonder, all from the comfort of your car.');
+    drawPlaylist(); drawCountdown();
+  }
+  function drawSettings() {
+    setText('announcementText', c.announcement || 'Welcome to Loy Family Lights!');
+    setText('stationText', c.station || 'Tune in on-site');
+    setText('locationText', c.locationLabel || 'Location coming soon');
+    if (parseDate(c.seasonStart) && parseDate(c.seasonEnd)) setText('scheduleDates', `${formatDate(c.seasonStart)} – ${formatDate(c.seasonEnd)} · Hours are subject to weather.`);
+    const hours = $('scheduleTimes'); hours.replaceChildren();
+    for (const item of (c.schedule || [])) {
+      const block = document.createElement('div');
+      const days = document.createElement('b'); days.textContent = item.days || '';
+      const time = document.createElement('span'); time.textContent = item.time || '';
+      block.append(days, time); hours.appendChild(block);
+    }
+    if (c.address) {
+      const link = $('directionsLink'); link.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.address); link.hidden = false;
+      setText('addressNotice', c.address);
+    }
+    const socials = $('socialLinks');
+    for (const [key,label] of [['facebookUrl','Facebook'],['youtubeUrl','YouTube'],['instagramUrl','Instagram'],['donationUrl','Support Us']]) {
+      const href = validHttp(c[key]); if (!href) continue;
+      const a = document.createElement('a'); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = label; socials.appendChild(a);
+    }
+    const rf = validHttp(c.remoteFalconUrl);
+    const request = $('requestBtn');
+    if (rf) { request.href = rf; request.target = '_blank'; request.rel = 'noopener noreferrer'; request.textContent = '♡  Request a Song'; }
+    else { request.href = '#music'; request.textContent = '♡  Requests Coming Soon'; request.setAttribute('aria-disabled', 'true'); request.addEventListener('click', e => e.preventDefault()); }
+    setText('year', new Date().getFullYear());
+  }
+  function drawBulbs() {
+    const el = $('miniBulbs'); el.replaceChildren(); el.dataset.pattern = lightPattern;
+    const colors = {pink:'#ff5c72',gold:'#ffd66a',green:'#4edcb4',blue:'#83caff'};
+    for (let i=0;i<15;i++) {
+      const bulb = document.createElement('span'); bulb.className = 'bulb';
+      bulb.style.setProperty('--light',lightColor === 'rainbow' ? Object.values(colors)[i % 4] : colors[lightColor]);
+      if (lightPattern === 'twinkle') bulb.style.animationDelay = `${(i % 5)*.19}s`;
+      el.appendChild(bulb);
+    }
+  }
+  async function readStatusFeed() {
+    const url = validHttp(c.statusJsonUrl) || ((c.statusJsonUrl || '').startsWith('data/') ? c.statusJsonUrl : '');
+    if (!url) return;
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('Invalid data');
+      // Prevent stale feeds from accidentally advertising a show as live indefinitely.
+      const timestamp = Date.parse(data.updatedAt);
+      const maxAgeMs = Math.max(30, Number(c.statusRefreshSeconds) || 60) * 1000 * 5;
+      if (!Number.isFinite(timestamp) || Math.abs(Date.now() - timestamp) > maxAgeMs) throw new Error('Stale feed');
+      liveSnapshot = {
+        status: statusNames[data.status] ? data.status : 'scheduled',
+        nowPlaying: String(data.nowPlaying || '').slice(0, 120),
+        upNext: String(data.upNext || '').slice(0, 120),
+        updatedAt: data.updatedAt
+      };
+    } catch (err) { liveSnapshot = null; setText('lastUpdated', 'Status feed unavailable; showing configured schedule.'); }
+    drawStatus();
+  }
+  const menuButton = document.querySelector('.menu-toggle');
+  menuButton.addEventListener('click', () => { const open = $('siteNav').classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); });
+  document.querySelectorAll('#siteNav a').forEach(a => a.addEventListener('click', () => { $('siteNav').classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }));
+  $('themeToggle').addEventListener('click', () => { currentSeason = currentSeason === 'christmas' ? 'halloween' : 'christmas'; drawSeason(); });
+  document.querySelectorAll('.swatch').forEach(btn => btn.addEventListener('click', () => {
+    lightColor = btn.dataset.color;
+    document.querySelectorAll('.swatch').forEach(x => { x.classList.toggle('active', x === btn); x.setAttribute('aria-pressed',String(x === btn)); });
+    drawBulbs();
+  }));
+  document.querySelectorAll('[data-pattern]').forEach(btn => { if (!btn.classList.contains('small-btn')) return; btn.addEventListener('click', () => {
+    lightPattern = btn.dataset.pattern;
+    document.querySelectorAll('.pattern-row .small-btn').forEach(x => x.classList.toggle('selected', x === btn));
+    drawBulbs();
+  }); });
+  $('favoriteSave').addEventListener('click', () => {
+    const favorite = $('favoriteSelect').value;
+    if (!favorite) return;
+    try { localStorage.setItem('loy-favorite-' + currentSeason, favorite); setText('favoriteMessage', 'Saved on this device: ' + favorite); }
+    catch { setText('favoriteMessage', 'Your browser did not allow saving this choice.'); }
+  });
+  drawSettings(); drawSeason(); drawBulbs();
+  if (c.statusJsonUrl) { readStatusFeed(); window.setInterval(readStatusFeed, Math.max(30, Number(c.statusRefreshSeconds) || 60) * 1000); }
+  window.setInterval(drawCountdown, 60 * 60 * 1000);
+})();
+
+</script>
 </body>
 </html>
