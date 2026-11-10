@@ -1,3 +1,20 @@
+# Loy Family Lights — GitHub Pages (fixed v1.1)
+
+**Fix for the unstyled page shown in your screenshot:** `index.html` now contains all its CSS and interactive JavaScript. Even if you upload just `index.html`, the design will render, including the holiday theme and light controls. Upload `config.js` too to customize the show settings; the page has built-in defaults if that file is missing.
+
+If your page still looks unstyled, open the actual published GitHub Pages URL (not GitHub's source preview), then hard refresh with Ctrl+F5. Check **Settings → Pages** and wait for the deployment workflow to succeed.
+
+## Quick fix on GitHub
+1. Unzip the package.
+2. Replace your existing repository-root `index.html` with this version.
+3. Upload the other files, preserving `assets/` and `.github/workflows/` folder names.
+4. Commit changes and open **Actions → Deploy GitHub Pages** to confirm success.
+5. Open `https://YOURUSERNAME.github.io/YOURREPOSITORY/` and use Ctrl+F5.
+
+**Customization:** Edit `config.js`. Keep the page's inline scripts in place; the external config is loaded before the bundled app runs at the bottom of the page.
+
+---
+
 # Loy Family Lights — GitHub Pages website
 
 A new, independently implemented static holiday show site inspired by the feature ideas in the Marquee 0.20.4 WordPress project. No WordPress, PHP, Node or build process required.
