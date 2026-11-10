@@ -2,7 +2,7 @@
 window.LOY_CONFIG = {
   showName: 'Loy Family Lights',
   tagline: 'Where music meets the magic of lights',
-  station: 'Tune in on-site', // Example: '88.1 FM' (set only your actual licensed/use frequency)
+  station: '92.5 FM', // Example: '88.1 FM' (set only your actual licensed/use frequency)
   locationLabel: 'Ligonier, Indiana',
   address: '', // Optional public viewing address; used to enable Directions
   timezone: 'America/Indiana/Indianapolis',
