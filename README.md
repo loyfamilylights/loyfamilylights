@@ -1,83 +1,46 @@
-# Loy Family Lights — GitHub Pages (fixed v1.1)
+# Loy Family Lights — v3.0 · GitHub Pages
 
-**Fix for the unstyled page shown in your screenshot:** `index.html` now contains all its CSS and interactive JavaScript. Even if you upload just `index.html`, the design will render, including the holiday theme and light controls. Upload `config.js` too to customize the show settings; the page has built-in defaults if that file is missing.
+Website: https://loyfamilylights.github.io/loyfamilylights/
 
-If your page still looks unstyled, open the actual published GitHub Pages URL (not GitHub's source preview), then hard refresh with Ctrl+F5. Check **Settings → Pages** and wait for the deployment workflow to succeed.
+## Deploy
 
-## Quick fix on GitHub
-1. Unzip the package.
-2. Replace your existing repository-root `index.html` with this version.
-3. Upload the other files, preserving `assets/` and `.github/workflows/` folder names.
-4. Commit changes and open **Actions → Deploy GitHub Pages** to confirm success.
-5. Open `https://YOURUSERNAME.github.io/YOURREPOSITORY/` and use Ctrl+F5.
+1. Extract the **contents** of this ZIP (not the ZIP as a single uploaded file).
+2. In https://github.com/loyfamilylights/loyfamilylights, upload/replace `index.html`, `config.js`, `assets/`, `data/`, `.nojekyll`, and `.github/` directly at repository root; preserve subfolders.
+3. Commit to `main`. Under Settings → Pages, choose **GitHub Actions** if using the included workflow. If using branch-based deployment instead, select `main` / `(root)` and remove the workflow if not needed.
+4. Open the website and hard-refresh (Ctrl+Shift+R).
 
-**Customization:** Edit `config.js`. Keep the page's inline scripts in place; the external config is loaded before the bundled app runs at the bottom of the page.
+## Edit show details
 
----
+Open `config.js` in GitHub and change the placeholders for FM frequency, viewing location, dates/hours, playlists and announcements. **The shipped hours are examples, not confirmed schedule.** The HTML contains fallback defaults to keep the page styled even if config.js is missing; config.js overrides them when present.
 
-# Loy Family Lights — GitHub Pages website
+## v3.0 features
 
-A new, independently implemented static holiday show site inspired by the feature ideas in the Marquee 0.20.4 WordPress project. No WordPress, PHP, Node or build process required.
+- Your v2-style navy/gold/red responsive design and Christmas/Halloween switch.
+- Animated decorative snow with on/off button and reduced-motion support.
+- Show Center with Now Playing/Up Next, a manual refresh control and stale-feed guard.
+- Seasonal playlists, featured song and optional Remote Falcon visitor request link.
+- Kids’ mini light lab and local-device-only favorite song picker.
+- Expanded seasonal discovery, Behind the Lights cards, customizable visitor note and visitor FAQ.
+- Example social share artwork, responsive navigation and built-in CSS/JS.
 
-## Preview
+## Live FPP status — optional, not automatically active
 
-Open `index.html` in a browser, or run `python -m http.server 8080` from this folder and visit http://localhost:8080. An HTTP server is required for the optional live JSON fetch to work reliably.
-
-## Publish to GitHub Pages
-
-1. Sign into GitHub and create a **public repository** such as `loy-family-lights`.
-2. Upload all files **inside** this folder to the **root of the repository** (not the folder itself), including the `.github` directory, `config.js`, `index.html`, and `assets`.
-3. Make sure your default branch is named `main` (or adjust `.github/workflows/pages.yml`).
-4. In your GitHub repository open **Settings → Pages**, and under **Build and deployment → Source** choose **GitHub Actions**.
-5. The included workflow deploys automatically after a push to `main`, and the URL appears on **Settings → Pages**. For example: `https://YOURUSERNAME.github.io/loy-family-lights/`.
-6. Edit `config.js`, commit your changes and GitHub will republish your site.
-
-The site uses relative file paths, so it works at both project and custom-domain URLs.
-
-## Customize your show
-
-Only edit `config.js` for most settings:
-
-| Setting | What it does |
-|---|---|
-| `station` | Set your real radio frequency (default is a placeholder) |
-| `locationLabel` / `address` | Public location and optional Google Maps directions |
-| `schedule`, `seasonStart`, `seasonEnd` | **Sample schedule only**: change to real show hours and dates |
-| `status` | Owner-selected show status: `scheduled`, `live`, `paused`, `cancelled` or `offseason` |
-| `announcement` | Alert banner text |
-| `remoteFalconUrl` | Public song-request/voting page (no secret tokens) |
-| `playlist`, `halloweenPlaylist` | Your songs and genres |
-| `facebookUrl`, `youtubeUrl`, `instagramUrl`, `donationUrl` | Optional public links |
-| `season` | Start in `christmas` or `halloween` theme |
-| `statusJsonUrl` | Optional public JSON file showing show status and current song |
-
-**Before announcing your site:** update the example show hours, radio frequency, viewing address, and playlist. The sample songs are demonstration entries, not a claim that these songs are available on your active FPP.
-
-## Optional status feed
-
-GitHub Pages itself cannot directly query your FPP device at a private network address (such as `192.168.1.x`). For live data you can publish an intentionally public **read-only snapshot** from a secure external process (e.g. a GitHub Actions or serverless automation). The browser can then read it from a public URL in `statusJsonUrl`. **Never** publish FPP credentials, your internal IPs, Remote Falcon API keys, or unrestricted device controls.
-
-Example JSON:
+The site is **static** and cannot connect to your LAN-only FPP controllers (`192.168.x.x`). Do **not** forward FPP ports or publish credentials. Set `statusJsonUrl` to a publicly accessible, read-only HTTPS JSON feed managed by your own secure relay. Sample schema:
 
 ```json
-{
-  "status": "live",
-  "nowPlaying": "The Bells of Christmas Thunder",
-  "upNext": "The Greatest Night of the Year",
-  "updatedAt": "2026-12-01T18:00:00-05:00"
-}
+{"status":"live","nowPlaying":"The Bells of Christmas Thunder","upNext":"The Greatest Night of the Year","updatedAt":"2026-12-01T19:05:00-05:00"}
 ```
 
-`updatedAt` must be recent (within ~5 refresh intervals) so stale data will not present a show as live. A remote feed must permit browser cross-origin reads (CORS), or you can host the JSON on the same GitHub Pages site. The site does **not** include a publisher: configure one separately if you need this feature.
+Allowed status values: `live`, `scheduled`, `paused`, `cancelled`, `offseason`. The timestamp must be updated whenever the snapshot is published; stale data falls back to preview mode. Configure `statusMaxAgeMinutes` and `statusRefreshSeconds` as needed. Host the JSON at `data/show-status.json` on GitHub Pages or another HTTPS endpoint with the appropriate CORS policy. **GitHub Pages alone does not update status data automatically**: a separate secure updater/relay must publish fresh JSON; GitHub Actions or another authorized process may be used. The bundled example isn't referenced and has an intentionally invalid timestamp.
 
-## Features and limitations
+## Remote Falcon
 
-**Works on GitHub Pages:** responsive seasonal design, manual show status, countdown, show schedule, visitor information, featured/playlist songs, custom external song request link, theme toggle, Kids' Light Lab (interactive), and on-device favorite selection.
+Set `remoteFalconUrl` to your public Remote Falcon visitor URL. The website opens it, rather than submitting requests directly. If empty, it shows “coming soon.”
 
-**Needs a backend/third-party service:** true real-time Now Playing, collective visitor song voting, public guestbook, notifications, live camera, or approved "Name in Lights" messages sent to FPP. These are **not implemented** in the static site. Favorite song selections are stored in each visitor's own browser, not shared with the owner or other visitors. The Name in Lights panel is an informational placeholder, not a form.
+## Security and privacy
 
-**Safety and privacy:** Do not expose a private FPP instance or its credentials on a public GitHub site. Any future names/picture submission feature should have parental oversight, moderation and rate limiting before connecting to your displays.
+This site does not include backend voting, guestbook submissions, account login, or FPP command endpoints. Favorites and theme choices stay only in each visitor's browser. No public credentials, network control, or secret keys belong in `config.js`.
 
-## Attribution
+## Inspiration and licensing
 
-This is an original static front-end inspired by high-level ideas from `marquee-0.20.4.zip`, not a port or redistribution of its WordPress plugin. The Marquee source describes its license as GPLv2 or later. No Marquee source files or artwork have been copied into this project.
+This is an independent static design for Loy Family Lights, adapted conceptually from your Marquee Festive WordPress theme; it does not run WordPress PHP or require plugins. New v3 features use custom HTML/CSS/JS. The original uploaded WordPress ZIP is not required on GitHub Pages.
